@@ -184,3 +184,21 @@ $ sudo docker restart id_or_name
 
 
 ---
+# Docker Compose
+
+# Docker 實際範例
+## Postgresql
+[Official Document](https://hub.docker.com/_/postgres)
+* 拉取image
+```linux=
+$ docker pull postgres
+```
+
+* 啟動container(可搭配 -itd, --rm。)
+```linux=
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+```
+* 連進去已啟動的container
+```linux
+$ docker exec -it {container id} psql -U $PG_USER
+```
